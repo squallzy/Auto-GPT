@@ -54,6 +54,7 @@ Your support is greatly appreciated
   - [🐦 Connect with Us on Twitter](#-connect-with-us-on-twitter)
   - [Run tests](#run-tests)
   - [Run linter](#run-linter)
+  - [Reddit AI Daily Summary](#reddit-ai-daily-summary)
 
 ## 🚀 Features
 
@@ -356,3 +357,23 @@ flake8 scripts/ tests/
 # Or, if you want to run flake8 with the same configuration as the CI:
 flake8 scripts/ tests/ --select E303,W293,W291,W292,E305
 ```
+
+## Reddit AI Daily Summary
+
+The script `scripts/reddit_ai_summary.py` fetches the top discussions of the day from several AI related subreddits
+and uses OpenAI to generate a roughly 2000字 Chinese summary. Set the following environment variables before running:
+
+```
+REDDIT_CLIENT_ID
+REDDIT_CLIENT_SECRET
+REDDIT_USER_AGENT  # optional, defaults to 'reddit_ai_summary_script'
+OPENAI_API_KEY
+```
+
+Run the script with:
+
+```
+python scripts/reddit_ai_summary.py
+```
+
+The summary will be saved in the `outputs/` directory with the current date in the file name.
